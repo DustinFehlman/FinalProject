@@ -10,29 +10,6 @@ public class Items {
     private String itemType;
     private boolean stowed;
 
-    public Items() {
-
-        //setStowed(false);
-
-        if (getItemType() == "accessories") {
-
-            setSize(1);
-        }
-        if (getItemType() == "beauty" || getItemType() == "clothing") {
-
-            setSize(2);
-        }
-
-        if (getItemType() == "shoes" || getItemType() == "bags") {
-            setSize(3);
-        }
-
-        if (getItemType() == "housewares") {
-            setSize(5);
-        }
-
-    }
-
     public int getSize() {
         return size;
     }

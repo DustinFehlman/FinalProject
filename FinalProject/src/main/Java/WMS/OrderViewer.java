@@ -51,7 +51,7 @@ public class OrderViewer {
 
             y++;
         }
-        //Tester to check mathematically if we are creating the right amount of boxes. Will  not be in final version.
+        //Tester to check mathematically if we are creating the right amount of boxes. Will  not be in final version. Adds up total unit value and divides by 9.
         double testTwo = test / 9;
         int testThree = test % 9;
         System.out.println(test + " / 9 = " + testTwo + " remainder " + testThree);

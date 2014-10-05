@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Items {
-    public int size;
+    private int size;
     private int sku;
     private String name;
     private String itemType;

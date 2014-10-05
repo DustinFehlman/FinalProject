@@ -57,7 +57,7 @@ public class OrderViewer {
         System.out.println(test + " / 9 = " + testTwo + " remainder " + testThree);
         if (testThree > 0)
             testTwo += 1;
-        System.out.println("Boxes needed: " + testTwo);
+        System.out.println("Math check of boxes needed: " + testTwo);
         System.out.println();
         return orderItems;
 

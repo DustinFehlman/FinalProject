@@ -16,7 +16,7 @@ public class WebPrinter {
         ArrayList<String> itemsInfo = new ArrayList<String>();
         ArrayList<String> boxCount = new ArrayList<String>();
         ArrayList<ArrayList<String>> webPrint = new ArrayList<ArrayList<String>>();
-        orderInfo.add("Order " + order.getOrderNumber() + " contains:");
+        orderInfo.add("Order Number " + order.getOrderNumber() + " contains:");
 
         for (int x = 0; x < order.getItems().size(); x++) {
             productTypeTally.add(order.getItems().get(x).getItemType());
@@ -25,6 +25,7 @@ public class WebPrinter {
         boxCount.add("You will need " + view.size() + " boxes:");
         for (String productType : uniqueSet) {
             orderInfo.add(productType + ": " + Collections.frequency(productTypeTally, productType));
+        }
 
             for (int i = 0; i < view.size(); i++) {
                 view.get(i);
@@ -40,7 +41,7 @@ public class WebPrinter {
             }
 
 
-        }
+
         webPrint.add(boxCount);
         webPrint.add(itemsInfo);
         webPrint.add(orderInfo);

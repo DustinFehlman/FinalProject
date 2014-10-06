@@ -22,10 +22,6 @@ public class HomeController {
 
         return "welcome";
     }
-    @Bean
-    public RestTemplate getRestTemplate() throws Exception {
-        RestTemplate restTemplate = new RestTemplate();
-        return restTemplate;
-    }
+
 }
 

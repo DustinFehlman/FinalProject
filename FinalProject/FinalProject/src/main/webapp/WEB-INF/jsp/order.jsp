@@ -16,6 +16,11 @@
      <script src="<c:url value="/resources/bootstrap/js/bootstrap.js" />"></script>
 <section class="container">
     <div class="row">
+    <div class="col-lg-12">
+    <h1>ZAPPOS WMS SHIPMENT SORTER</h1>
+    </div>
+    </div>
+    <div class="row">
     <div class="col-md-6" style="padding-bottom: 15px">
 
             <c:forEach items="${boxCount}" var="boxCounts">

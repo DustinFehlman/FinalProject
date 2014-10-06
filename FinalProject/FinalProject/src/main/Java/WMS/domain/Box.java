@@ -1,4 +1,4 @@
-package WMS;
+package WMS.domain;
 
 import java.util.ArrayList;
 
@@ -8,10 +8,11 @@ public class Box {
     int boxRoom;
     ArrayList<Items> boxContents;
 
+    final int INITIAL_BOX_ROOM = 9;
 
     public Box() {
 
-        boxRoom = 9;
+        boxRoom = INITIAL_BOX_ROOM;
         boxContents = new ArrayList<Items>();
 
     }

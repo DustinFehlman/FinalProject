@@ -1,4 +1,8 @@
-package WMS;
+package WMS.controller;
+
+
+import WMS.domain.*;
+import WMS.service.*;
 
 
 import java.util.ArrayList;
@@ -9,9 +13,9 @@ import java.util.Set;
 public class WebPrinter {
 
     public static ArrayList<ArrayList<String>> printToWeb() {
-        Order order = OrderGrabber.getOrderContents();
+        Order order = OrderService.getOrderContents();
         ArrayList<String> orderInfo = new ArrayList<String>();
-        ArrayList<Box> view = Sorter.sortOrder(order);
+        ArrayList<Box> view = BoxService.sortOrder(order);
         ArrayList<String> productTypeTally = new ArrayList<String>();
         ArrayList<String> itemsInfo = new ArrayList<String>();
         ArrayList<String> boxCount = new ArrayList<String>();
@@ -31,8 +35,8 @@ public class WebPrinter {
                 view.get(i);
                 itemsInfo.add("---------------------------- ");
                 itemsInfo.add("Box " + (i + 1) + " :");
-                for (int x = 0; x < view.get(i).boxContents.size(); x++) {
-                    Items item = view.get(i).boxContents.get(x);
+                for (int x = 0; x < view.get(i).getBoxContents().size(); x++) {
+                    Items item = view.get(i).getBoxContents().get(x);
                     itemsInfo.add("\t" + "> Name: " + item.getName());
                     itemsInfo.add("\t" + "Type: " + item.getItemType());
                     itemsInfo.add("\t" + "Sku: " + item.getSku());

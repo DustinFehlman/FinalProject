@@ -1,4 +1,4 @@
-package WMS;
+package WMS.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

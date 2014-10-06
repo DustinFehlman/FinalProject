@@ -1,13 +1,22 @@
-package WMS;
+package WMS.service;
+
+import WMS.domain.Items;
+import WMS.domain.Order;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class OrderViewer {
+public class OrderService {
 
-    // Counts the amount of product types.  Prints out order contents, and assigns the item a size based on type.
+    public static Order getOrderContents() {
+        RestTemplate restTemplate = new RestTemplate();
+        Order order = restTemplate.getForObject("http://sleepy-eyrie-4425.herokuapp.com/getOrder", Order.class);
+        return order;
+    }
+
     public static Order displayOrder(Order order) {
         //Order order = OrderGrabber.getOrderContents();
         ArrayList<Items> orderItems = order.getItems();
@@ -64,4 +73,5 @@ public class OrderViewer {
 
 
     }
+
 }

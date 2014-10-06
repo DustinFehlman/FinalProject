@@ -1,12 +1,13 @@
-package WMS;
+package WMS.service;
+
+import WMS.domain.Box;
+import WMS.domain.Order;
 
 import java.util.ArrayList;
 
-public class Sorter {
-
-            //Method with a few for loops to sort the item out and put in respective boxes based on enough size.
+public class BoxService {
     public static ArrayList<Box> sortOrder(Order order) {
-        Order sort = OrderViewer.displayOrder(order);
+        Order sort = OrderService.displayOrder(order);
         ArrayList<Box> boxList = new ArrayList<Box>();
         Box box = new Box();
         int boxCount = 0;
@@ -27,7 +28,9 @@ public class Sorter {
 
                             boxList.get(y).getBoxContents().add(sort.getItems().get(x));
                             sort.getItems().get(x).setStowed(true);
-                            boxList.get(y).boxRoom -= sort.getItems().get(x).getSize();
+                            int boxRoom = boxList.get(y).getBoxRoom();
+                            boxRoom -= sort.getItems().get(x).getSize();
+                            boxList.get(y).setBoxRoom(boxRoom);
                         } else if (y == boxList.size() - 1) {
                             boxList.add(new Box());
                             boxCount++;
@@ -35,7 +38,9 @@ public class Sorter {
 
                             box.getBoxContents().add(sort.getItems().get(x));
                             sort.getItems().get(x).setStowed(true);
-                            box.boxRoom -= sort.getItems().get(x).getSize();
+                            int boxRoom = boxList.get(y).getBoxRoom();
+                            boxRoom -= sort.getItems().get(x).getSize();
+                            boxList.get(y).setBoxRoom(boxRoom);
                         }
 
                     }
@@ -47,5 +52,3 @@ public class Sorter {
         return boxList;
     }
 }
-
-

@@ -8,7 +8,7 @@ import java.util.Set;
 public class OrderViewer {
 
     // Counts the amount of product types.  Prints out order contents, and assigns the item a size based on type.
-    public static ArrayList<Items> displayOrder() {
+    public static Order displayOrder() {
         Order order = OrderGrabber.getOrderContents();
         ArrayList<Items> orderItems = order.getItems();
         ArrayList<String> productTypeTally = new ArrayList<String>();
@@ -59,7 +59,7 @@ public class OrderViewer {
             testTwo += 1;
         System.out.println("Math check of boxes needed: " + testTwo);
         System.out.println();
-        return orderItems;
+        return order;
 
 
     }

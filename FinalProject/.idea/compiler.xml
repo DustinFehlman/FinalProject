@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="60 Day version b" />
+        <module name="Final Project" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="60 Day version b" target="1.6" />
+      <module name="Final Project" target="1.6" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

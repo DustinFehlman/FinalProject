@@ -1,5 +1,6 @@
 package WMS.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by harrisjo on 10/6/14.
  */
+@Controller
 public class BoxController {
     @RequestMapping("/box")
     public String getBoxes(Model model) {

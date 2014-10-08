@@ -38,8 +38,6 @@ public class WebPrinter {
                 for (int x = 0; x < view.get(i).getBoxContents().size(); x++) {
                     Items item = view.get(i).getBoxContents().get(x);
                     itemsInfo.add("\t" + "> Name: " + item.getName());
-                    itemsInfo.add("\t" + "Type: " + item.getItemType());
-                    itemsInfo.add("\t" + "Sku: " + item.getSku());
                     itemsInfo.add("----");
                 }
             }

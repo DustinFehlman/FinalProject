@@ -35,16 +35,7 @@
             </c:forEach>
 
     </div>
-   <div class="col-md-6" style="padding-bottom: 15px">
-       <c:forEach items="${orderInfo}" var="orderTally">
 
-
-           <h2>${orderTally}</h2>
-
-       </c:forEach>
-       <a href=" <spring:url value= "/box" /> " class="btn btn-success btn-lg" id="Pack" role="button" >Pack</a>
-       <button type="button" class="btn btn-danger btn-lg" id="Skip" >Skip</button>
-   </div>
    </div>
 
 </section>

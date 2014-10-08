@@ -33,19 +33,7 @@
     </div>
     </div>
     <div class="row">
-    <div class="col-md-6" style="padding-bottom: 15px">
 
-            <c:forEach items="${boxCount}" var="boxCounts">
-
-                <h1>${boxCounts}</h1>
-
-            </c:forEach>
-            <c:forEach items="${webPrinter}" var="webPrint">
-
-                <h4>${webPrint}</h4>
-            </c:forEach>
-
-    </div>
    <div class="col-md-6" style="padding-bottom: 15px">
        <c:forEach items="${orderInfo}" var="orderTally">
 
@@ -54,8 +42,9 @@
 
        </c:forEach>
        <a href=" <spring:url value= "/box" /> " class="btn btn-success btn-lg" id="Pack" role="button" >Pack</a>
+       <a href=" <spring:url value= "/order" /> " class="btn btn-danger btn-lg" id="Skip" role="button" >Skip</a>
 
-       <button type="button" class="btn btn-danger btn-lg" id="Skip" data-toggle="modal" data-target="#myModal" onclick="loadPage();">Skip</button>
+       <button type="button" class="btn btn-danger btn-lg" id="Test" data-toggle="modal" data-target="#myModal" onclick="loadPage();">Test</button>
 
        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
          <div class="modal-dialog">

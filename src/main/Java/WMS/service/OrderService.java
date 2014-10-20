@@ -10,4 +10,5 @@ public interface OrderService {
     Order displayOrder(Order order);
     Order create(Order order);
     ArrayList<String> orderItemTypeCount(Order order);
+    void delete(Order order);
 }

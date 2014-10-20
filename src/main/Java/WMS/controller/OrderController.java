@@ -47,9 +47,14 @@ public class OrderController {
 
     @RequestMapping("/byId")
     public String showOrderByOrderNumber(@RequestParam(value = "orderNumber", required = false) int orderNumber, Model model) {
-
         ArrayList<String> print = orderService.orderItemTypeCount(orderRepository.getOrderByOrderNumber(orderNumber));
         model.addAttribute("orderInfo" , print);
         return "byId";
+    }
+
+    @RequestMapping("/skip")
+    public String skipOrder(@RequestParam(value = "orderNumber") int orderNumber, Model model) {
+        orderService.delete(orderRepository.getOrderByOrderNumber(orderNumber));
+        return "redirect:order";
     }
 }

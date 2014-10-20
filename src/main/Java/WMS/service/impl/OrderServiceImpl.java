@@ -89,6 +89,10 @@ public class OrderServiceImpl implements OrderService {
         return orderRepository.create(order);
     }
 
+    public void delete(Order order) {
+        orderRepository.delete(order);
+    }
+
     public ArrayList<String> orderItemTypeCount(Order order) {
         ArrayList<String> orderInfo = new ArrayList<String>();
         ArrayList<String> productTypeTally = new ArrayList<String>();

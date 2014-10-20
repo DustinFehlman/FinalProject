@@ -49,4 +49,8 @@ public class InMemoryOrderRepository implements OrderRepository {
         listOfOrders.add(order);
         return order;
     }
+
+    public void delete(Order order) {
+        listOfOrders.remove(order);
+    }
 }

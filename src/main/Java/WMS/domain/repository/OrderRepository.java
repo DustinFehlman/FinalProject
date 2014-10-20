@@ -14,4 +14,5 @@ public interface OrderRepository {
     List<Order> getAllOrders();
     Order getOrderByOrderNumber(int orderNumber);
     Order create(Order order);
+    void delete(Order order);
 }

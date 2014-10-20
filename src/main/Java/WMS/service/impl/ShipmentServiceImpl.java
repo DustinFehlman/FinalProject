@@ -23,4 +23,8 @@ public class ShipmentServiceImpl implements ShipmentService {
     public Shipment create(Shipment shipment) {
         return shipmentRepository.create(shipment);
     }
+
+    public void delete(Shipment shipment) {
+        shipmentRepository.delete(shipment);
+    }
 }

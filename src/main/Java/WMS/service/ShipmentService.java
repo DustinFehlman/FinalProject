@@ -12,4 +12,5 @@ import WMS.domain.Shipment;
 public interface ShipmentService {
 
     Shipment create(Shipment shipment);
+    void delete(Shipment shipment);
 }

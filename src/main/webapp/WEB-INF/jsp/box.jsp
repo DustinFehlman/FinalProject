@@ -18,14 +18,10 @@
 <section class="container">
     <div class="row">
     <div class="col-lg-12">
-    <h1>ZAPPOS WMS SHIPMENT SORTER</h1>
+    <h1 style="text-align:center"><img src="../../resources/bootstrap/images/Zappos_logo-1.jpg" style="height:50px; weight:100px"> WMS SHIPMENT SORTER</h1>
     </div>
     </div>
     <div class="row">
-
-        <img src="../../resources/bootstrap/images/Zappos_logo-1.jpg" style="height:200px; width:400px">
-        <br></br>
-        <a href=" <spring:url value= "/order" /> " class="btn btn-success btn-lg" id="Done" role="button" >Next Order</a>
 
         <h1>${count}</h1>
         <c:forEach items="${items}" var="items">
@@ -34,7 +30,9 @@
         </div>
         </c:forEach>
    </div>
-
+   <div>
+        <a href=" <spring:url value= "/order" /> " class="btn btn-success btn-lg" id="Done" role="button" style="position:fixed;right:80px;bottom:20px">Next Order</a>
+   </div>
 </section>
 </body>
 </html>

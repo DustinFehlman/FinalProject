@@ -23,11 +23,14 @@
     </div>
     <div class="row">
 
-        <img src="../../resources/bootstrap/images/Zappos_logo-1.jpg">
+        <img src="../../resources/bootstrap/images/Zappos_logo-1.jpg" style="height:200px; width:400px">
+        <br></br>
+        <a href=" <spring:url value= "/order" /> " class="btn btn-success btn-lg" id="Done" role="button" >Next Order</a>
+
         <h1>${count}</h1>
         <c:forEach items="${items}" var="items">
-        <div class="col-md-6" style="padding-bottom: 15px; background-image: url(../../resources/bootstrap/images/Open%20Box.jpg)" >
-            <pre>${items}</pre>
+        <div class="col-md-6" style="padding-bottom: 15px" >
+            <pre style="background-image: url(../../resources/bootstrap/images/Open%20Box.jpg)">${items}</pre>
         </div>
         </c:forEach>
    </div>

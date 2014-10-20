@@ -16,14 +16,20 @@
 <script src="<c:url value="/resources/bootstrap/js/bootstrap.js" />"></script>
 <div class="container">
     <div class = "row">
+        <h1 style="text-align:center"><img src="../../resources/bootstrap/images/Zappos_logo-1.jpg" style="height:50px; weight:100px"> WMS SHIPMENT SORTER</h1>
         <h1>My History</h1>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </div>
 <a href=" <spring:url value= "/order" /> " class="btn btn-primary btn-lg" id="Home" role="button" >Home</a>
 <div class = "row">
-<c:forEach items="${orderNumbers}" var="orderNumber">
-    <a href=" <spring:url value= "/order/byId?orderNumber=${orderNumber}" /> " class="btn btn-default btn-block" id="Pack" role="button" style="max-width: 400px; margin: 0 auto 10px;">Order ID: ${orderNumber}</a>
-</c:forEach>
+<div class="col-md-6" style="padding-top: 15px">
+    <c:forEach items="${orderNumbers}" var="orderNumber">
+        <a href=" <spring:url value= "/order/byId?orderNumber=${orderNumber}" /> " class="btn btn-default btn-block" id="Pack" role="button" style="max-width: 400px">Order ID: ${orderNumber}</a>
+    </c:forEach>
+</div>
+<div class="col-md-6" style="padding: 100px">
+     <img src="../../resources/bootstrap/images/derpdog.gif" />
+</div>
 </div>
 </div>
 

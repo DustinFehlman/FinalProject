@@ -10,14 +10,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Stack;
 
-/**
- * Created with IntelliJ IDEA.
- * User: harrisjo
- * Date: 10/15/14
- * Time: 11:03 AM
- * To change this template use File | Settings | File Templates.
- */
-
 @Service
 public class BoxServiceImpl implements BoxService {
     @Autowired
@@ -30,14 +22,15 @@ public class BoxServiceImpl implements BoxService {
         int boxSize = 9;
         Stack<Items> itemStack = new Stack<Items>();
         int stackItemSum = 0;
-        int totalOrderUnitValue;
         int y = 0;
         int d = 0;
 
 
-        //Loop to go through items, until all are packed
+        //Loop to go through items, until item array is empty
         for (int x = 0; orderItems.getItems().size() != 0; x++) {
-            //Checks to see if x is greater than the amount of items.
+            /*Checks to see if x is greater than the amount of items, if it is, resets x te last index of the array.
+            //Also assigns d to the size of the items array size. This is to check if we have gone through the whole array
+            without finding a proper combination for the items left. Prevents arrray out of bounds exceptions.*/
             if (x >= orderItems.getItems().size()) {
                 x = orderItems.getItems().size() - 1;
                 d = orderItems.getItems().size();
@@ -51,7 +44,7 @@ public class BoxServiceImpl implements BoxService {
             }
 
             //Checks to see if there are still items in the item array tp be packed.
-            if (orderItems.getItems().size() > 0 ) {
+            if (orderItems.getItems().size() > 0) {
                 //Checks to see if item(s) in stack plus item at index x is less than 9. Resets to -1 so that at beginning of loop, x = 0.
                 if (stackItemSum + orderItems.getItems().get(x).getSize() <= boxSize) {
                     itemStack.push(orderItems.getItems().get(x));
@@ -84,14 +77,15 @@ public class BoxServiceImpl implements BoxService {
                     orderItems.getItems().add(itemStack.pop());
 
                 }
+                stackItemSum = 0;
 
                 for (int i = 0; orderItems.getItems().size() != 0; i = 0) {
                     Box box = new Box();
                     int boxRooms = box.getBoxRoom();
 
 
-                    for (int z = 0; z < orderItems.getItems().size() ; z++) {
-                        if (orderItems.getItems().get(z).getSize() <= boxRooms){
+                    for (int z = 0; z < orderItems.getItems().size(); z++) {
+                        if (orderItems.getItems().get(z).getSize() <= boxRooms) {
 
                             box.getBoxContents().add(orderItems.getItems().get(z));
                             boxRooms -= order.getItems().get(z).getSize();
@@ -100,6 +94,7 @@ public class BoxServiceImpl implements BoxService {
                         }
 
                     }
+                    stackItemSum = 0;
                     boxList.add(box);
                 }
             }
@@ -132,6 +127,7 @@ public class BoxServiceImpl implements BoxService {
 
         return boxList;
     }
+
 
 
     public ArrayList<String> boxItems(ArrayList<Box> view ) {

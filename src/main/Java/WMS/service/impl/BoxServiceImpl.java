@@ -1,6 +1,7 @@
 package WMS.service.impl;
 
 import WMS.domain.Box;
+import WMS.domain.Items;
 import WMS.domain.Order;
 import WMS.service.BoxService;
 import WMS.service.OrderService;
@@ -34,7 +35,7 @@ public class BoxServiceImpl implements BoxService {
         //for loop to go though item type array
         for (int z = 0; z < packOrder.length; z++) {
 
-            //for loop to go through the items
+            //for loop to go through the itemsfg
             for (int x = 0; x < sort.getItems().size(); x++) {
                 if (sort.getItems().get(x).getItemType().equalsIgnoreCase(packOrder[z])) {
                     //for loop to go through available boxes
@@ -65,5 +66,28 @@ public class BoxServiceImpl implements BoxService {
         }
 
         return boxList;
+    }
+
+    public ArrayList<String> boxItems(ArrayList<Box> view ) {
+        ArrayList<String> itemsInfo = new ArrayList<String>();
+
+        for (int i = 0; i < view.size(); i++) {
+            String itemInfo = "";
+            itemInfo += "----------------------------\n";
+            itemInfo += "Box " + (i + 1) + " :\n";
+            for (int x = 0; x < view.get(i).getBoxContents().size(); x++) {
+                Items item = view.get(i).getBoxContents().get(x);
+                itemInfo += "\t" + "> Name: " + item.getName() + "\n";
+                itemInfo += "----\n";
+
+            }
+            itemsInfo.add(itemInfo);
+            System.out.println(itemInfo);
+        }
+        return itemsInfo;
+    }
+
+    public String countBoxes(ArrayList<Box> boxes) {
+        return "You will need " + boxes.size() + " boxes:";
     }
 }

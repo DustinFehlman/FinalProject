@@ -88,4 +88,21 @@ public class OrderServiceImpl implements OrderService {
     public Order create(Order order) {
         return orderRepository.create(order);
     }
+
+    public ArrayList<String> orderItemTypeCount(Order order) {
+        ArrayList<String> orderInfo = new ArrayList<String>();
+        ArrayList<String> productTypeTally = new ArrayList<String>();
+        orderInfo.add("Order Number " + order.getOrderNumber() + " contains:");
+
+        for (int x = 0; x < order.getItems().size(); x++) {
+            productTypeTally.add(order.getItems().get(x).getItemType());
+        }
+        Set<String> uniqueSet = new HashSet<String>(productTypeTally);
+
+        for (String productType : uniqueSet) {
+            orderInfo.add(productType + ": " + Collections.frequency(productTypeTally, productType));
+        }
+
+        return orderInfo;
+    }
 }

@@ -19,15 +19,15 @@ public class OrderController {
     private OrderRepository orderRepository;
     @Autowired
     private OrderService orderService;
-    @Autowired
-    private WebPrinter webPrinter;
+    //@Autowired
+    //private WebPrinter webPrinter;
 
     @RequestMapping()
     public String showOrder(Model model) {
         RestTemplate restTemplate = new RestTemplate();
         Order order = restTemplate.getForObject("http://sleepy-eyrie-4425.herokuapp.com/getOrder", Order.class);
         orderService.create(order);
-        ArrayList<String> print = webPrinter.orderItemTypeCount(orderRepository.getOrderByOrderNumber(order.getOrderNumber()));
+        ArrayList<String> print = orderService.orderItemTypeCount(orderRepository.getOrderByOrderNumber(order.getOrderNumber()));
         model.addAttribute("orderNumber", order.getOrderNumber());
         model.addAttribute("orderInfo" , print);
         return "order";
@@ -48,7 +48,7 @@ public class OrderController {
     @RequestMapping("/byId")
     public String showOrderByOrderNumber(@RequestParam(value = "orderNumber", required = false) int orderNumber, Model model) {
 
-        ArrayList<String> print = webPrinter.orderItemTypeCount(orderRepository.getOrderByOrderNumber(orderNumber));
+        ArrayList<String> print = orderService.orderItemTypeCount(orderRepository.getOrderByOrderNumber(orderNumber));
         model.addAttribute("orderInfo" , print);
         return "byId";
     }

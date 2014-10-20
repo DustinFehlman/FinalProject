@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface ShipmentRepository {
     Shipment create(Shipment shipment);
-    Shipment delete(Shipment shipment);
+    void delete(Shipment shipment);
     Shipment getShipmentByOrderNumber(int orderNumber);
     List<Shipment> getAllShipments();
 }

@@ -50,4 +50,9 @@ public class InMemoryShipmentRepository implements ShipmentRepository {
         listOfShipments.add(shipment);
         return shipment;
     }
+
+    public void delete(Shipment shipment) {
+        listOfShipments.remove(shipment);
+    }
+
 }

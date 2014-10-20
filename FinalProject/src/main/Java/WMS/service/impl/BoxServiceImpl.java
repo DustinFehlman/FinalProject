@@ -10,14 +10,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Stack;
 
-/**
- * Created with IntelliJ IDEA.
- * User: harrisjo
- * Date: 10/15/14
- * Time: 11:03 AM
- * To change this template use File | Settings | File Templates.
- */
-
 @Service
 public class BoxServiceImpl implements BoxService {
     @Autowired

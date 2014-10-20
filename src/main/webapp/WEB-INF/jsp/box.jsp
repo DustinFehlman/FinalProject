@@ -22,20 +22,12 @@
     </div>
     </div>
     <div class="row">
-    <div class="col-md-6" style="padding-bottom: 15px">
-
-            <c:forEach items="${boxCount}" var="boxCounts">
-
-                <h1>${boxCounts}</h1>
-
-            </c:forEach>
-            <c:forEach items="${webPrinter}" var="webPrint">
-
-                <h4>${webPrint}</h4>
-            </c:forEach>
-
-    </div>
-
+        <h1>${count}</h1>
+        <c:forEach items="${items}" var="items">
+        <div class="col-md-6" style="padding-bottom: 15px">
+            <h4>${items}</h4>
+        </div>
+        </c:forEach>
    </div>
 
 </section>

@@ -10,8 +10,15 @@ public class Order {
         return items;
     }
 
+    public void setItems(ArrayList<Items> items) {
+        this.items = items;
+    }
+
     public int getOrderNumber() {
         return orderNumber;
+    }
 
+    public void setOrderNumber(int orderNumber) {
+        this.orderNumber = orderNumber;
     }
 }

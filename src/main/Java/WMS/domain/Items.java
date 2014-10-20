@@ -8,7 +8,7 @@ public class Items {
     private int sku;
     private String name;
     private String itemType;
-    private boolean stowed;
+    private boolean stowed = false;
 
     public int getSize() {
         return size;

@@ -11,10 +11,8 @@ public class Box {
     final int INITIAL_BOX_ROOM = 9;
 
     public Box() {
-
         boxRoom = INITIAL_BOX_ROOM;
         boxContents = new ArrayList<Items>();
-
     }
 
     public int getBoxRoom() {

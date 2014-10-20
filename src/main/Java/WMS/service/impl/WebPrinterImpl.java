@@ -46,14 +46,17 @@ public class WebPrinterImpl implements WebPrinter {
         ArrayList<String> itemsInfo = new ArrayList<String>();
 
         for (int i = 0; i < view.size(); i++) {
+            String itemInfo = "";
             view.get(i);
-            itemsInfo.add("---------------------------- ");
-            itemsInfo.add("Box " + (i + 1) + " :");
+            itemInfo.concat("----------------------------\n");
+            itemInfo.concat("Box " + (i + 1) + " :\n");
             for (int x = 0; x < view.get(i).getBoxContents().size(); x++) {
                 Items item = view.get(i).getBoxContents().get(x);
-                itemsInfo.add("\t" + "> Name: " + item.getName());
-                itemsInfo.add("----");
+                itemInfo.concat("\t" + "> Name: " + item.getName() + "\n");
+                itemInfo.concat("----\n");
+
             }
+            itemsInfo.add(itemInfo);
         }
         return itemsInfo;
     }

@@ -22,6 +22,8 @@
     </div>
     </div>
     <div class="row">
+
+        <img src="../../resources/bootstrap/images/Zappos_logo-1.jpg">
         <h1>${count}</h1>
         <c:forEach items="${items}" var="items">
         <div class="col-md-6" style="padding-bottom: 15px">

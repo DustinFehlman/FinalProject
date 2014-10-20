@@ -12,11 +12,20 @@
 </head>
 <body>
 <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<c:url value="/resources/bootstrap/js/bootstrap.js" />"></script>
+<div class="container">
+    <div class = "row">
+        <h1>My History</h1>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </div>
+<a href=" <spring:url value= "/order" /> " class="btn btn-primary btn-lg" id="Home" role="button" >Home</a>
+<div class = "row">
 <c:forEach items="${orderNumbers}" var="orderNumber">
-    <a href=" <spring:url value= "/order/byId?orderNumber=${orderNumber}" /> " class="btn btn-success btn-lg" id="Pack" role="button" >${orderNumber}</a>
+    <a href=" <spring:url value= "/order/byId?orderNumber=${orderNumber}" /> " class="btn btn-default btn-block" id="Pack" role="button" style="max-width: 400px; margin: 0 auto 10px;">Order ID: ${orderNumber}</a>
 </c:forEach>
+</div>
+</div>
+
 </body>
 </html>

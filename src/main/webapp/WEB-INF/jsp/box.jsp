@@ -21,7 +21,7 @@
     <h1 style="text-align:center"><img src="../../resources/bootstrap/images/Zappos_logo-1.jpg" style="height:50px; weight:100px"> WMS SHIPMENT SORTER</h1>
     </div>
     </div>
-    <div class="row">
+    <div class="row" style="padding-bottom:100px">
 
         <h1>${count}</h1>
         <c:forEach items="${items}" var="items">
@@ -31,6 +31,7 @@
         </c:forEach>
    </div>
    <div>
+        <a href=" <spring:url value= "/order/all" /> " class="btn btn-primary btn-lg" id="History" role="button" style="position:fixed;right:250px;bottom:20px">Order History</a>
         <a href=" <spring:url value= "/order" /> " class="btn btn-success btn-lg" id="Done" role="button" style="position:fixed;right:80px;bottom:20px">Next Order</a>
    </div>
 </section>

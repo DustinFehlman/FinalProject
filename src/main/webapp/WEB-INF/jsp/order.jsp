@@ -39,7 +39,7 @@
            <h2>${orderTally}</h2>
        </c:forEach>
        <a href=" <spring:url value= "/box?order=${orderNumber}" /> " class="btn btn-success btn-lg" id="Pack" role="button" >Pack</a>
-       <a href=" <spring:url value= "/order" /> " class="btn btn-danger btn-lg" id="Skip" role="button" >Skip</a>
+       <a href=" <spring:url value= "/skip?orderNumber=${orderNumber}" /> " class="btn btn-danger btn-lg" id="Skip" role="button" >Skip</a>
 
        <button type="button" class="btn btn-danger btn-lg" id="Test" data-toggle="modal" data-target="#myModal" onclick="loadPage();">Test</button>
 

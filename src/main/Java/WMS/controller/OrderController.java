@@ -43,7 +43,7 @@ public class OrderController {
         return "all";
     }
 
-    @RequestMapping("/byId")
+    @RequestMapping("/order/byId")
     public String showOrderByOrderNumber(@RequestParam(value = "orderNumber", required = false) int orderNumber, Model model) {
         ArrayList<String> print = orderService.orderItemTypeCount(orderRepository.getOrderByOrderNumber(orderNumber));
         model.addAttribute("orderInfo" , print);

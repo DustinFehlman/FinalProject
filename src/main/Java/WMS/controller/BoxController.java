@@ -49,12 +49,12 @@ public class BoxController {
     public String getBoxesAsObjects(@RequestParam( value = "order", required = true) int order, Model model) {
 
         ArrayList<Box> boxes = boxService.sortOrder(orderRepository.getOrderByOrderNumber(order));
-       //ArrayList<String> items = webPrinter.boxItems(boxes);
-        //String count = webPrinter.countBoxes(boxes);
+       ArrayList<String> items = webPrinter.boxItems(boxes);
+       String count = webPrinter.countBoxes(boxes);
 
         JSONArray jsonBoxList = new JSONArray();
 
-        for ( Box box : boxes ) {
+        /*for ( Box box : boxes ) {
             int x = 1;
             JSONObject jsonBox = new JSONObject();
             jsonBox.put("boxNumber", x);
@@ -71,10 +71,11 @@ public class BoxController {
         }
 
         model.addAttribute("jsonObject", jsonBoxList);
-        //model.addAttribute("count", count);
-        //model.addAttribute("items", items);
+        */
+        model.addAttribute("count", count);
+        model.addAttribute("items", items);
 
-        return "boxObject";
+        return "box";
 
     }
 

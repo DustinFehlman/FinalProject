@@ -24,7 +24,8 @@
     <div class="row" style="padding-bottom:100px">
         <h1>Shipment for Order # ${orderNumber}</h1>
         <h1>${count}</h1>
-        <c:forEach items="${items}" var="items">
+        <c:forEach items="${items}" var="items" varStatus="loopStatus">
+            <c:if test="${loopStatus.index % 2 == 0}"><div class="row"></div></c:if>
             <div class="col-md-6" style="padding-bottom: 15px" >
                 <pre style="background-image: url(../../resources/bootstrap/images/Open%20Box.jpg)">${items}</pre>
             </div>

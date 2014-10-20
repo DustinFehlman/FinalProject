@@ -2,6 +2,7 @@ package WMS.controller;
 
 import WMS.domain.*;
 import WMS.domain.repository.OrderRepository;
+import WMS.domain.repository.ShipmentRepository;
 import WMS.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,25 +30,6 @@ public class OrderController {
         model.addAttribute("orderNumber", order.getOrderNumber());
         model.addAttribute("orderInfo" , print);
         return "order";
-    }
-
-    @RequestMapping("/order/all")
-    public String showAllOrders(Model model) {
-        List<Order> orders = orderRepository.getAllOrders();
-        model.addAttribute("orders",orders);
-        ArrayList<String> orderNumbers = new ArrayList<String>();
-        for ( Order order : orders ) {
-            orderNumbers.add(Integer.toString(order.getOrderNumber()));
-        }
-        model.addAttribute("orderNumbers", orderNumbers);
-        return "all";
-    }
-
-    @RequestMapping("/order/byId")
-    public String showOrderByOrderNumber(@RequestParam(value = "orderNumber", required = false) int orderNumber, Model model) {
-        ArrayList<String> print = orderService.orderItemTypeCount(orderRepository.getOrderByOrderNumber(orderNumber));
-        model.addAttribute("orderInfo" , print);
-        return "byId";
     }
 
     @RequestMapping(value = "/skip", method = RequestMethod.GET)

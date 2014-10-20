@@ -31,7 +31,7 @@
         </c:forEach>
    </div>
    <div>
-        <a href=" <spring:url value= "/order/all" /> " class="btn btn-primary btn-lg" id="History" role="button" style="position:fixed;right:250px;bottom:20px">Order History</a>
+        <a href=" <spring:url value= "/shipment/all" /> " class="btn btn-primary btn-lg" id="History" role="button" style="position:fixed;right:250px;bottom:20px">Order History</a>
         <a href=" <spring:url value= "/order" /> " class="btn btn-success btn-lg" id="Done" role="button" style="position:fixed;right:80px;bottom:20px">Next Order</a>
    </div>
 </section>

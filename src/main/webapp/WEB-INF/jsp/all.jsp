@@ -24,7 +24,7 @@
 <div class = "row">
 <div class="col-md-6" style="padding-top: 15px">
     <c:forEach items="${orderNumbers}" var="orderNumber">
-        <a href=" <spring:url value= "/order/byId?orderNumber=${orderNumber}" /> " class="btn btn-default btn-block" id="Pack" role="button" style="max-width: 400px">Order ID: ${orderNumber}</a>
+        <a href=" <spring:url value= "/shipment/byId?orderNumber=${orderNumber}" /> " class="btn btn-default btn-block" id="Pack" role="button" style="max-width: 400px">Order ID: ${orderNumber}</a>
     </c:forEach>
 </div>
 <div class="col-md-6" style="padding: 100px">

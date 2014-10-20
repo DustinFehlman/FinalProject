@@ -4,7 +4,6 @@ import WMS.domain.Box;
 import WMS.domain.repository.OrderRepository;
 import WMS.service.BoxService;
 import WMS.service.OrderService;
-import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,7 +35,7 @@ public class BoxController {
         model.addAttribute("count", count);
         model.addAttribute("items", items);
 
-        return "box";
+        return "shipment";
 
     }
 }

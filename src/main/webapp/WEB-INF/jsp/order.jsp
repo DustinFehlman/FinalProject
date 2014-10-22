@@ -10,24 +10,26 @@
     <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
     <title>Zappos WMS</title>
 </head>
-<body>
+<body style="background-color: #EEEEEE">
      <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
      <!-- Include all compiled plugins (below), or include individual files as needed -->
      <script src="<c:url value="/resources/bootstrap/js/bootstrap.js" />"></script>
 
 <section class="container">
-    <div class="row">
-
-    <h1 style="text-align:center"><img src="../../resources/bootstrap/images/Zappos_logo-1.jpg" style="height:50px; weight:100px"> WMS SHIPMENT SORTER</h1>
-
+    <div class="row" style="background-color: #FFFFFF; border-style: solid">
+        <div class="col-lg-12">
+        <h1 style="text-align:center"><img src="../../resources/bootstrap/images/Zappos_logo-1.jpg" style="height:50px; weight:100px"> WMS SHIPMENT SORTER</h1>
+        </div>
     </div>
     <div class="row">
+    <br></br>
 
    <div class="col-md-6" style="padding-bottom: 15px">
        <c:forEach items="${orderInfo}" var="orderTally">
-           <h2>${orderTally}</h2>
+           <p style="font-family:verdana; text-transform: capitalize; font-size: 24px; font-weight: bold">${orderTally}</h2>
        </c:forEach>
+       <br></br>
        <a href=" <spring:url value= "/shipment?orderNumber=${orderNumber}" /> " class="btn btn-success btn-lg" id="Pack" role="button" >Pack</a>
        <a href=" <spring:url value= "/skip?orderNumber=${orderNumber}" /> " class="btn btn-danger btn-lg" id="Skip" role="button" >Skip</a>
 

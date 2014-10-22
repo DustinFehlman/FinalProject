@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
@@ -51,6 +52,7 @@ public class ShipmentController {
         String count = boxService.countBoxes(boxes);
         model.addAttribute("count", count);
         model.addAttribute("items", items);
+        model.addAttribute("orderNumber", Integer.toString(orderNumber));
 
         return "shipment";
 
@@ -66,6 +68,12 @@ public class ShipmentController {
         }
         model.addAttribute("orderNumbers", orderNumbers);
         return "all";
+    }
+
+    @RequestMapping(value = "/cancel", method = RequestMethod.GET)
+    public String skipOrder(@RequestParam(value = "orderNumber") int orderNumber) {
+        shipmentService.delete(shipmentRepository.getShipmentByOrderNumber(orderNumber));
+        return "redirect:shipment/all";
     }
 
 }

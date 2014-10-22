@@ -27,13 +27,14 @@
         <c:forEach items="${items}" var="items" varStatus="loopStatus">
             <c:if test="${loopStatus.index % 2 == 0}"><div class="row"></div></c:if>
             <div class="col-md-6" style="padding-bottom: 15px;" >
-            <pre style="background-color: #F6DC90; box-shadow: 10px 10px 5px #888888;">${items}</pre>
+            <pre style="background-color: #FFEECC; box-shadow: 10px 10px 5px #888888; font-size: 18px; font-weight: bold; font-family:verdana">${items}</pre>
         </div>
         </c:forEach>
    </div>
    <div>
-        <a href=" <spring:url value= "/shipment/all" /> " class="btn btn-primary btn-lg" id="History" role="button" style="position:fixed;right:250px;bottom:20px">Order History</a>
-        <a href=" <spring:url value= "/order" /> " class="btn btn-success btn-lg" id="Done" role="button" style="position:fixed;right:80px;bottom:20px">Next Order</a>
+        <a href=" <spring:url value="/cancel?orderNumber=${orderNumber}" />" class="btn btn-danger btn-lg" id="Skip" role="button" style="position:fixed;right:50px;bottom:20px">Cancel</a>
+        <a href=" <spring:url value= "/shipment/all" /> " class="btn btn-primary btn-lg" id="History" role="button" style="position:fixed;right:150px;bottom:20px">Order History</a>
+        <a href=" <spring:url value= "/order" /> " class="btn btn-success btn-lg" id="Done" role="button" style="position:fixed;right:300px;bottom:20px">Next Order</a>
    </div>
 </section>
 </body>

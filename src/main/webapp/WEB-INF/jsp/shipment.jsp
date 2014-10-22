@@ -10,13 +10,13 @@
     <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
     <title>Zappos WMS</title>
 </head>
-<body>
+<body style="background-color: #EEEEEE">
      <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
      <!-- Include all compiled plugins (below), or include individual files as needed -->
      <script src="<c:url value="/resources/bootstrap/js/bootstrap.js" />"></script>
 <section class="container">
-    <div class="row">
+    <div class="row" style="background-color: #FFFFFF; border-style: solid">
     <div class="col-lg-12">
     <h1 style="text-align:center"><img src="../../resources/bootstrap/images/Zappos_logo-1.jpg" style="height:50px; weight:100px"> WMS SHIPMENT SORTER</h1>
     </div>
@@ -26,8 +26,8 @@
         <h1>${count}</h1>
         <c:forEach items="${items}" var="items" varStatus="loopStatus">
             <c:if test="${loopStatus.index % 2 == 0}"><div class="row"></div></c:if>
-            <div class="col-md-6" style="padding-bottom: 15px" >
-            <pre style="background-image: url(../../resources/bootstrap/images/Open%20Box.jpg)">${items}</pre>
+            <div class="col-md-6" style="padding-bottom: 15px;" >
+            <pre style="background-color: #F6DC90; box-shadow: 10px 10px 5px #888888;">${items}</pre>
         </div>
         </c:forEach>
    </div>
